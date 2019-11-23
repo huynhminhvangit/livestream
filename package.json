@@ -2,6 +2,7 @@
   "name": "livestream",
   "version": "0.1.0",
   "private": true,
+  "author": "Vàng Huỳnh Minh",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
