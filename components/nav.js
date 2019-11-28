@@ -1,18 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
 
-const links = [
-  { href: 'https://zeit.co/now', label: 'ZEIT' },
-  { href: 'https://github.com/zeit/next.js', label: 'GitHub' },
-].map(link => {
-  link.key = `nav-link-${link.href}-${link.label}`
-  return link
-})
-
 const Nav = () => (
   <div className="navbar navbar-expand-lg navbar-dark bg-primary">
     <nav className="container">
-      <a className="navbar-brand" href="#">LiveStream</a>
+      <Link href="/"><a className="navbar-brand">LIVESTREAM</a></Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -20,21 +12,32 @@ const Nav = () => (
       <div className="collapse navbar-collapse" id="navbarColor01">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
-            <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+            <Link href="/"><a className="nav-link">Trang Chủ <span className="sr-only">(current)</span></a></Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">Features</a>
+            <Link href="/lich-phat-song"><a className="nav-link" >Lịch phát sóng</a></Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">Pricing</a>
+            <a className="nav-link" href="https://facebook.com/huynh.m.vang" target="_blank">Fanpage</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">About</a>
+            <a className="nav-link" href="https://diendan.livestream.com" target="_blank">Cộng đồng</a>
           </li>
         </ul>
         <form className="form-inline my-2 my-lg-0">
-          <input className="form-control mr-sm-2" type="text" placeholder="Search" />
-          <button className="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+          <div className="btn-group">
+            <button type="button" className="btn btn-dark dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Đăng nhập / Đăng ký&nbsp;
+              <span className="sr-only">Đăng nhập / Đăng ký</span>
+            </button>
+            <div className="dropdown-menu">
+              <a className="dropdown-item" href="#">Đăng nhập</a>
+              <a className="dropdown-item" href="#">Đăng ký</a>
+              <div className="dropdown-divider"></div>
+              <a className="dropdown-item" href="#">Đăng nhập bằng facebook</a>
+              <a className="dropdown-item" href="#">Đăng nhập bằng google</a>
+            </div>
+          </div>
         </form>
       </div>
     </nav>

@@ -23,10 +23,10 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link rel="icon" href="/favicon.ico" />
-          <link ref="styessheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+          <link rel="stylesheet" href="/css/font-awesome.min.css"/>
           <link rel="stylesheet" href="/css/bootstrap.min.css" />
         </Head>
-        <body>
+        <body style={{ backgroundColor: '#666' }}>
           <Main />
           <script src="/js/jquery-3.3.1.slim.min.js"></script>
           <script src="/js/popper.min.js"></script>
