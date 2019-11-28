@@ -14,7 +14,7 @@ export default class Home extends React.Component {
     document.getElementById('my_marquee').start()
   }
   HiddenMarquee() {
-    
+    $('.div_marquee').slideUp(300)
   }
   render() {
     return (
@@ -23,7 +23,7 @@ export default class Home extends React.Component {
           <title>Home</title>
         </Head>
         <Nav />
-        <div className="container">
+        <div className="container div_marquee">
           <div className="row">
             <div
               className="col-auto text-center my-auto"
