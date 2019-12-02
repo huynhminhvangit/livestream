@@ -1,6 +1,8 @@
-import React from 'react'
 
 export default class Marquee extends React.Component {
+  constructor(props) {
+    super(props)
+  }
   MarqueeStop() {
     document.getElementById('my_marquee').stop()
   }
@@ -11,6 +13,18 @@ export default class Marquee extends React.Component {
     $('.div_marquee').slideUp(300)
   }
   render() {
+    const { marquees } = this.props;
+    const marqueeItem = marquees.map((item, index) => (
+      <span key={index} className="pr-5">
+        <div
+          className="spinner-grow text-success"
+          style={{ width: '1rem', height: '1rem' }}
+          role="status"
+        >
+        </div>
+        <span dangerouslySetInnerHTML={{ __html: item.message }}></span>
+      </span>
+    ));
     return (
       <div className="container div_marquee">
         <div className="row">
@@ -30,9 +44,7 @@ export default class Marquee extends React.Component {
                 onMouseOut={() => this.MarqueeStart()}
               >
                 <div className="pt-1">
-                  <span className="pr-5"><div className="spinner-grow text-success" style={{ width: '1rem', height: '1rem' }} role="status"></div> Livestream cung cấp link xem bóng đá trực tuyến, giải pháp xem trực tiếp bóng đá NHANH CHÓNG, CHẤT LƯỢNG và ỔN ĐỊNH. Cập nhật liên tục lịch thi đấu, kết quả, bảng xếp hạng các giải đấu ngoại hạng anh, C1, Laliga, Seri A... </span>
-                  <span className="pr-5"><div className="spinner-grow text-success" style={{ width: '1rem', height: '1rem' }} role="status"></div> Website Livestream đang trong giai đoạn thử nghiệm và hoàn thiện, phiên bản chính thức sẽ được update sớm nhất, cảm ơn các bạn đã ủng hộ! <a href="https://www.facebook.com/huynh.m.vang" target="_blank">Tham gia Group góp ý tại đây</a></span>
-                  <span className="pr-5"><div className="spinner-grow text-success" style={{ width: '1rem', height: '1rem' }} role="status"></div> Kênh Youtube xem bản tin bóng đá <a href="https://www.facebook.com/huynh.m.vang" target="_blank">Đăng ký tại đây</a></span>
+                  {marqueeItem}
                 </div>
               </marquee>
             </div>
